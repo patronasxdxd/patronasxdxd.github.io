@@ -40,7 +40,7 @@ const Welcome = () => {
           <h1 className="text-3xl sm:text-5xl text-white text-gradient py-1">
             Governor Dao <br /> On a EIP-2535: Diamond, Multi-Facet Proxy
           </h1>
-          
+
           {!currentAccount && (
             <button
               type="button"
@@ -54,11 +54,11 @@ const Welcome = () => {
             </button>
           )}
 
-          
+
         </div>
 
-        
-          
+
+
       </div>
     </div>
   );

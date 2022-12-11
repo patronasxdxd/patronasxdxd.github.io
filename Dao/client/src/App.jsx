@@ -3,11 +3,8 @@ import { Navbar, Welcome ,Box,Vote,Propose,Excecute} from "./components";
 const App = () => (
   <div className="min-h-screen">
     <div className="gradient-bg-welcome">
-      {/* <Navbar /> */}
+      <Navbar />
       <Welcome />
-  
-   
-
     <div className="flex">
     <Propose />
     <Vote />

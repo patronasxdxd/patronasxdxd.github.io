@@ -1,8 +1,8 @@
 /* global ethers */
 
 
-const {ethers} = require('hardhat')
-const {FunctionFragment,ErrorFragment} = require('@ethersproject/abi')
+const { ethers } = require('hardhat')
+const { FunctionFragment, ErrorFragment } = require('@ethersproject/abi')
 
 
 

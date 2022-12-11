@@ -5,7 +5,7 @@ const FacetCutAction = {
   Remove: 2
 }
 
-function getSelectors (contract) {
+function getSelectors(contract) {
   const selectors = contract.abi.reduce((acc, val) => {
     if (val.type === 'function') {
       acc.push(val.signature)
@@ -17,12 +17,12 @@ function getSelectors (contract) {
   return selectors
 }
 
-function removeItem (array, item) {
+function removeItem(array, item) {
   array.splice(array.indexOf(item), 1)
   return array
 }
 
-function findPositionInFacets (facetAddress, facets) {
+function findPositionInFacets(facetAddress, facets) {
   for (let i = 0; i < facets.length; i++) {
     if (facets[i].facetAddress === facetAddress) {
       return i
