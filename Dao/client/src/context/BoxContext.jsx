@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-
-import { contractABIBox, BoxFacet, GovenorContract, contractABIGovernor, DiamondAddress, contractABIGovToken, timeLockAddress, contractABITimeLock, GovernanceToken } from "../utils/constants";
-import { id } from "ethers/lib/utils";
-
+import { contractABIBox, GovenorContract, contractABIGovernor, DiamondAddress, contractABIGovToken } from "../utils/constants";
 export const BoxContext = React.createContext();
 
 const { ethereum } = window;
@@ -36,22 +33,15 @@ export const BoxContentProvider = ({ children }) => {
   const [voteData, setvoteData] = useState({ proposal: "", values: "", reason: "" });
   const [execData, setExecData] = useState({ proposal: "" });
   const [structArray, setStructArray] = useState([]);
-
-
   const [isLoadingExecute, setIsLoadingExecute] = useState(false);
   const [isLoadingVote, setIsLoadingVote] = useState(false);
-
-
-
   const [currentAccount, setCurrentAccount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"));
-  //const [transactions, setTransactions] = useState([]);
   const [boxvalues, setboxValues] = useState([]);
   const [proposalId, setProposalId] = useState([]);
   const [currentProposal, setCurrentProposal] = useState([]);
   const [voteTime, setvoteTime] = useState("");
-  const [Blockchained, setBlockchained] = useState("");
+
 
 
   const handleChange = (e, name) => {
@@ -65,8 +55,6 @@ export const BoxContentProvider = ({ children }) => {
     setvoteData((prevState) => ({ ...prevState, [name]: e.target.value }));
   };
 
-
-
   const makeCards = async () => {
     loaded = true;
     try {
@@ -76,13 +64,12 @@ export const BoxContentProvider = ({ children }) => {
         const availableTransactions = await transactionsContract.getAllTransactions();
 
         const structuredTransactions = availableTransactions.map((transaction) => ({
-          // addressFrom: transaction.sender,
           timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
           message: transaction.value,
           amount: transaction.amount.toNumber()
         }));
 
-        //  console.log("here");
+    
 
         setStructArray(structuredTransactions);
       } else {
@@ -124,10 +111,6 @@ export const BoxContentProvider = ({ children }) => {
 
 
         setProposalId(state);
-
-
-
-
       } else {
         console.log("Ethereum is not present");
       }
@@ -136,41 +119,14 @@ export const BoxContentProvider = ({ children }) => {
     }
   };
 
-  const checkSate = async () => {
 
-
-    try {
-      if (ethereum) {
-        console.log("xd");
-
-
-
-
-
-      } else {
-        console.log("Ethereum is not present");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const getCurrentProposal = async () => {
-
-
     try {
       if (ethereum) {
         const boxContract = createEthereumContract();
 
         const availableTransactions = await boxContract.getProposal();
-
-
-        //setCurrentProposal(62568287157613061209260595334271840154113816132753167614645326);
-
-
-
-
-
       } else {
         console.log("Ethereum is not present");
       }
@@ -178,10 +134,6 @@ export const BoxContentProvider = ({ children }) => {
       console.log(error);
     }
   };
-
-
-
-
   const checkIfWalletIsConnect = async () => {
     try {
       if (!ethereum) return alert("Please install MetaMask.");
@@ -209,8 +161,6 @@ export const BoxContentProvider = ({ children }) => {
   checkIfWalletIsConnect();
 
 
-
-
   const execute = async () => {
     try {
       if (ethereum) {
@@ -219,21 +169,11 @@ export const BoxContentProvider = ({ children }) => {
         const boxContract = createEthereumContract();
         const govenorToken = createGovenorToken();
 
-
-
-
-
-
-
         console.log("executing...e")
         console.log(await governor.votingPeriod());
 
-        // console.log(go)
         const proposalState = await governor.state(boxContract.getProposal());
         console.log(`Current Proposal States: ${proposalState}`);
-
-
-
         let valueData = 0;
         let descriptionData = "";
 
@@ -244,17 +184,7 @@ export const BoxContentProvider = ({ children }) => {
           descriptionData = value[count - 1].value;
 
         }
-
-
-
         const encodedFunctionCall = boxContract.interface.encodeFunctionData("store", [valueData])
-        console.log("part2");
-        console.log(valueData);
-        console.log(descriptionData);
-
-
-
-
         const descriptionHash = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(descriptionData))
         console.log(descriptionHash)
 
@@ -286,15 +216,6 @@ export const BoxContentProvider = ({ children }) => {
           console.log(`Box value: ${await boxContract.retrieve()}`)
 
         }
-
-
-
-
-        //setvoteTime("");
-
-
-
-
       } else {
         console.log("Ethereum is not present");
       }
@@ -383,19 +304,8 @@ export const BoxContentProvider = ({ children }) => {
 
   };
 
-
-
-
-
-
-
-
-
-
   const checkIfProposalExists = async () => {
     try {
-
-
       if (ethereum) {
         console.log("checking");
         const boxContract = createEthereumContract();
