@@ -7,7 +7,7 @@ Simple loan system
 Using react, soldity and typescript
 
 # visit https://patronasxdxd.github.io/Daox
-![Screenshot](imageDao.png)
+![Screenshot](image2.png)
 
 Dao on A Diamond
 
