@@ -36,5 +36,9 @@
   font-size: 2rem;
   color: white;
   font-weight: 600;
-  text-shadow: 2px 2px gray;
+  text-shadow: 
+  0 -1px 0 #fff, 
+  0 1px 0 #2e2e2e, 
+
+  0 5px 60px rgba(0, 0, 0, 0.9);
 }
