@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "/Users/gilleszwijsen/loan/client/src/css/mystyle.module.css"
+import styles from "/Users/gilleszwijsen/patronasxdxd.github.io/Website/client/src/css/mystyle.module.css"
+import Typed from 'react-typed';
 
 
 
@@ -20,6 +21,25 @@ const About = () => {
   </div>
 
 
+
+
+
+  <div className={styles.title }>
+  <Typed className="text-white" style={{ maxWidth:600 }}
+
+
+
+
+
+strings= {[" // SPDX-License-Identifier: GPL-3.0 <br> pragma solidity >=0.4.16 <0.9.0; <br> contract SimpleStorage { <br>     uint storedData; <br>  function set(uint x) public { <br>        storedData = x; "]}
+
+
+typeSpeed= {60}
+backSpeed={100}
+loop
+
+/>
+</div>
 
 
 <div className={styles.shadowxd2 }>
