@@ -8,6 +8,9 @@ const About = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
   return (
+
+
+  
     
     <div className="flex flex-col item-center justify-center">
 
@@ -21,36 +24,37 @@ const About = () => {
   </div>
 
 
-
-
-
+<div className="m-auto">
   <div className={styles.title }>
-  <Typed className="text-white" style={{ maxWidth:600 }}
+  <Typed className="text-white " style={{ maxWidth:600 }}
 
-
-
-
-
-strings= {[" // SPDX-License-Identifier: GPL-3.0 <br> pragma solidity >=0.4.16 <0.9.0; <br> contract SimpleStorage { <br>     uint storedData; <br>  function set(uint x) public { <br>        storedData = x; "]}
+strings= {["0xPatronas"]}
 
 
 typeSpeed= {60}
 backSpeed={100}
 loop
-
 />
+
+</div>
 </div>
 
 
+
+
+
+
+{/* 
 <div className={styles.shadowxd2 }>
      <h2 className="text-white text-4xl text-base text-center mx-2"> 0xPatronasxd  </h2>
-     </div>
+     </div> */}
 
 
 
     </div>
 
     
+  
 
 
    
