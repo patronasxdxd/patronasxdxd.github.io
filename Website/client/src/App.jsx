@@ -1,19 +1,22 @@
-import { Navbar, Welcome ,House,CreateLendContract,Fund,TakeLoan} from "./components";
+import { Navbar, Welcome ,Projects,Skills,About} from "./components";
 
 
 const App = () => (
   
-  <div className="min-h-screen">
+  <div className="min-h-screen gradient-bg-welcome">
     <div className="">
   
       <Navbar />
-      <House/>
+      <About/>
       <Welcome />
-    <div className="flex justify-end gap-2 ">
-      <CreateLendContract/>
-      <Fund/>
-      <TakeLoan/>
-    </div>
+      <About/>
+      <Skills/>
+      <Projects/>
+    {/* <div className="flex justify-end gap-2 "> */}
+      
+      
+      
+    {/* </div> */}
     </div>
   </div>
 );
