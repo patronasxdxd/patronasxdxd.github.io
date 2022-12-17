@@ -12,7 +12,7 @@ const About = () => {
 
   
     
-    <div className="flex flex-col item-center justify-center">
+    <div id="aboutus" className="flex flex-col item-center justify-center">
 
 <div className= "m-auto">
 
