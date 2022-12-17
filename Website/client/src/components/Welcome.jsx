@@ -10,7 +10,6 @@ const Welcome = () => {
 
 
 
-
           
 
 
@@ -75,14 +74,14 @@ const Welcome = () => {
 <div className="flex flex-col">
 <img
     src="./images/box.png"
-    class="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
+    class="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none "
     alt=""
   />
   
   <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
 <img
     src="./images/mario.png"
-    class="max-w-sm h-auto animate-bounce h-100 w-100 transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
+    class="max-w-sm h-auto animate-bounce h-100 w-100 transition-shadow ease-in-out duration-300 shadow-none "
     alt=""
   />
   </div>

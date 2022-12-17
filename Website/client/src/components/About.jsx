@@ -12,21 +12,22 @@ const About = () => {
 
   
     
-    <div className="flex flex-col item-center justify-center bg-midnight">
+    <div className="flex flex-col item-center justify-center">
 
 <div className= "m-auto">
 <img
     src="./images/me2.png  "
-    class="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
+    class="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none "
     alt=""
   />
 
   </div>
 
 
+
 <div className="m-auto">
   <div className={styles.title }>
-  <Typed className="text-white " style={{ maxWidth:600 }}
+  <Typed className="text-black " style={{ maxWidth:600 }}
 
 strings= {["0xPatronas"]}
 
