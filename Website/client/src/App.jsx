@@ -3,7 +3,7 @@ import { Navbar, Welcome ,Projects,Skills,About} from "./components";
 
 const App = () => (
   
-  <div className="min-h-screen bg-midnight">
+  <div className="min-h-screen ">
     <div className="">
   
       <Navbar />
