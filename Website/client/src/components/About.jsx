@@ -6,11 +6,23 @@ const About = () => {
 
   return (
     
-    <div className="bg-rose-900	">
+    <div className="flex justify-center">
 
-<h1>about</h1>
+<img
+    src="./images/me2.png  "
+    class="max-w-sm h-auto  transition-shadow ease-in-out duration-300 shadow-none hover:shadow-xl"
+    alt=""
+  />
+
+
+
+
+
+
 
     </div>
+
+    
 
 
    

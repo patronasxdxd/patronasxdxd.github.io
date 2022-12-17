@@ -7,7 +7,15 @@ module.exports = {
       display: ["Open Sans", "sans-serif"],
       body: ["Open Sans", "sans-serif"],
     },
+  
     extend: {
+      backgroundImage:{
+        dao: "url('./images/doa.png')",
+        loan: "url('/images/loan.jpeg')"
+      },
+      colors: {
+        'midnight': '#100b05',
+      },
       screens: {
         mf: "990px",
       },
