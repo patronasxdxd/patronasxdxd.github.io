@@ -70,7 +70,7 @@ const Projects = () => {
     </a>
     <a href="https://patronasxdxd.github.io" className="flex justify-end">
         <div className="flex flex-wrap content-center ">
-            <img src="./images/loan4.png" className="mx-auto   " alt=""></img>
+            <img src="./images/loan2.png" className="mx-auto   " alt=""></img>
         </div>
     </a>
     <br></br>
