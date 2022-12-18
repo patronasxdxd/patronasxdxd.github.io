@@ -73,18 +73,6 @@ const Projects = () => {
             <img src="./images/loan2.png" className="mx-auto   " alt=""></img>
         </div>
     </a>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
 
   </div> 
 
