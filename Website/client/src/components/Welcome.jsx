@@ -71,20 +71,24 @@ const Welcome = () => {
 </ol>
       
     
-<div className="flex flex-col">
+    <a href="mailto:gilleszwijsen@gmail.com">
+<div className="flex flex-col " >
+  
 <img
     src="./images/box.png"
     class="max-w-sm h-auto transition-shadow ease-in-out duration-300 shadow-none "
     alt=""
+    href="dwa"
   />
   
-  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br/><br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
 <img
     src="./images/mario.png"
     class="max-w-sm h-auto animate-bounce h-100 w-100 transition-shadow ease-in-out duration-300 shadow-none "
     alt=""
   />
   </div>
+  </a>
 
 
      
