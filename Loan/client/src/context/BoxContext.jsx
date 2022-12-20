@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ethers } from "ethers";
 
 import { loanContract , tokenContract} from "../utils/constants";
@@ -29,35 +29,17 @@ const createTokenContract = () => {
 
 export const BoxContentProvider = ({ children }) => {
   const [formDataLoan, setformData] = useState({ loanAmount: "", feeAmount: "", collAmount: "", timestamp: "" });
-  const [formDataCount, setformDataCount] = useState({ count: ""});
+  const [formDataCount, setformDataCount] = useState({ count: "", amount: ""});
   const [formDataState, setformDataState] = useState({Count: ""});
-
   const [received, setReceived] = useState("");
-  const [execData, setExecData] = useState({ proposal: "" });
-  const [structArray, setStructArray] = useState([]);
-
-  const [isLoadingExecute, setIsLoadingExecute] = useState(false);
-  const [isLoadingVote, setIsLoadingVote] = useState(false);
   const [isLoadingFund, setIsLoadingFund] = useState(false);
   const [isLoadingTaken, setILoadingTaken] = useState(false);
-
   const [takenBool, settakenBool] = useState("");
   const [funded, setFunded] = useState("");
   const [noFunds, setNoFunds] = useState("");
-
-  const [currentAccount, setCurrentAccount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"));
-  //const [transactions, setTransactions] = useState([]);
-  const [boxvalues, setboxValues] = useState([]);
-  const [proposalId, setProposalId] = useState([]);
-  const [currentProposal, setCurrentProposal] = useState([]);
-  const [voteTime, setvoteTime] = useState("");
-  const [Blockchained, setBlockchained] = useState("");
   const [state, setState] = useState("");
-
   const [createId, setCreateId] = useState("");
-
 
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
@@ -85,11 +67,7 @@ export const BoxContentProvider = ({ children }) => {
 
         const transactionsContract = createLoanContract();
 
-
-
           const Terms = {
-   
-
                 loanDaiAmount: loanAmount,
                 feeDaiAmount:feeAmount,
                 ethCollateralAmount:collAmount,
@@ -207,18 +185,10 @@ export const BoxContentProvider = ({ children }) => {
   const takeLoan = async () => {
     try {
       if (ethereum) {
-        const { count } = formDataCount;
+        const { count,amount } = formDataCount;
         const transactionsContract = createLoanContract();
-        // const EthtokenContract = createTokenContract();
-
-
-        //  const approve = await EthtokenContract.approve(loanContract,10000);
-
         const fund = await transactionsContract.getState(count)   
-
-       console.log(fund);
-
-        const takeALoanAndAcceptLoanTerms = await transactionsContract.takeALoanAndAcceptLoanTerms(count,{value:1});
+        const takeALoanAndAcceptLoanTerms = await transactionsContract.takeALoanAndAcceptLoanTerms(count,{value:amount});
 
           setILoadingTaken(true);
          const fundReceipt = await takeALoanAndAcceptLoanTerms.wait(1)

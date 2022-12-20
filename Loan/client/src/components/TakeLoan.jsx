@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import { TransactionContext } from "../context/TransactionContext";
 import { Loader } from ".";
 import { BoxContext } from "../context/BoxContext";
 import styles from "/Users/gilleszwijsen/loan/client/src/css/mystyle.module.css"
@@ -18,16 +17,15 @@ const Input = ({ placeholder, name, type, value, handleChange,Mint,received}) =>
 );
 
 const TakeLoan = () => {
-  const { currentAccount, connectWallet } = useContext(TransactionContext);
-  const {  formDataState,formDataCount,handleChange,fund,isLoadingTaken,createId,handleChangeFund,state,handleChangeState,getState,takeLoan,takenBool,Mint,received} = useContext(BoxContext);
+  const {  formDataCount,isLoadingTaken,createId,handleChangeFund,takeLoan,takenBool,Mint,received} = useContext(BoxContext);
 
 
   const handleSubmit = (e) => {
-    const { count } = formDataCount;
+    const { count,amount } = formDataCount;
 
     e.preventDefault();
 
-    if (!count) return;
+    if (!count || !amount ) return;
 
     takeLoan();
   };
@@ -41,9 +39,6 @@ const TakeLoan = () => {
   };
 
   
-
- 
-
  
   return (
 
@@ -53,6 +48,8 @@ const TakeLoan = () => {
      <h2 className="text-white text-3xl text-base text-center mx-2"> Take Loan  </h2>
      </div>
     <Input placeholder="enter the loan number" name="count" type="number" handleChange={handleChangeFund} />
+    <Input placeholder="enter the loan Amount" name="amount" type="number" handleChange={handleChangeFund} />
+
     <div className="h-[1px] w-full bg-gray-400 my-2" />
 
     
